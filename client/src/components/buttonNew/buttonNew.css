@@ -1,0 +1,44 @@
+.button-block {
+    margin-right: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.button {
+    position: relative;
+    padding: 10px 20px;
+    border: 2px solid darkgreen;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 4px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    color: darkgreen;
+}
+
+.button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    background: darkgreen;
+    z-index: -1;
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    transform: scaleX(1);
+}
+
+.button:hover:before {
+    transform-origin: right;
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
+}

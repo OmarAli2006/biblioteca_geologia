@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
     //2. ver si el usuario existe en la base de datos
 
     const user = await pool.query(
-      "SELECT * FROM usuario WHERE id_usuario = $1",
+      "SELECT * FROM usuarios WHERE id_usuario = $1",
       [id_usuario]
     );
 
@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
     //4. Ingresar el nuevo usuario en la base de datos
 
     const nuevoUsuario = await pool.query(
-      "INSERT INTO usuario (id_usuario, clave, ap_paterno, ap_materno, nombres, correo, tipo_usuario, acceso_total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING * ",
+      "INSERT INTO usuarios (id_usuario, clave, ap_paterno, ap_materno, nombres, correo, tipo_usuario, acceso_total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING * ",
       [
         id_usuario,
         bcryptClave,
