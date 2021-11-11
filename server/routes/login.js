@@ -13,14 +13,12 @@ router.post("/", async (req, res) => {
 
     //2. Revisar si el usuario no existe (si no existe, enviar mensaje de error)
     const usuario = await pool.query(
-      "SELECT * FROM usuario WHERE id_usuario = $1",
+      "SELECT * FROM usuarios WHERE id_usuario = $1",
       [id_usuario]
     );
 
     if (usuario.rows.length === 0) {
-      return res
-        .status(401)
-        .json("El numero de usuario o la contraseña son incorrectos");
+      return res.status(401).json("El numero de usuario o la contraseña son incorrectos");
     }
 
     //3. Revisar si la contraseña ingresada coincide con la almacenada en la base de datos

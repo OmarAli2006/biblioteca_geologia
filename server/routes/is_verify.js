@@ -6,7 +6,7 @@ router.get("/", autorizacion, async (req, res) => {
     res.json(true);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Error en el servidor");
+    res.status(403).send("Error en el servidor");
   }
 });
 

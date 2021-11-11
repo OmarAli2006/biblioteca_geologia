@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    position: sticky;
+    top: 50px;
+}
+
+.others {
+    flex: 4;
+}

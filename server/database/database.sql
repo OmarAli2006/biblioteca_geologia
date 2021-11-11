@@ -36,7 +36,8 @@ CREATE TABLE libros(
     año_publicacion INT NOT NULL,
     editorial VARCHAR (255) NOT NULL,
     archivo VARCHAR (255) NOT NULL,
-    portada VARCHAR (255) NOT NULL
+    portada VARCHAR (255) NOT NULL,
+    visibilidad BOOLEAN NOT NULL
 );
 
 --Comando para crear la tabla tesis
@@ -48,7 +49,8 @@ CREATE TABLE tesis(
     autor VARCHAR (255) NOT NULL,
     año_publicacion INT NOT NULL,
     archivo VARCHAR (255) NOT NULL,
-    caratula VARCHAR (255) NOT NULL
+    caratula VARCHAR (255) NOT NULL,
+    visibilidad BOOLEAN NOT NULL
 );
 
 --Comando para crear la tabla imagenes
@@ -59,7 +61,8 @@ CREATE TABLE imagenes(
     descripcion varchar (512) NOT NULL,
     autor VARCHAR (255) NOT NULL,
     año_publicacion INT NOT NULL,
-    archivo VARCHAR (255) NOT NULL
+    archivo VARCHAR (255) NOT NULL,
+    visibilidad BOOLEAN NOT NULL
 );
 
 --comando para crear la tabla lectura
@@ -122,14 +125,14 @@ INSERT INTO usuarios (
     tipo_usuario,
     acceso_total
     ) VALUES (
-        '78901',
+        '11111',
         '12345', 
         'Ali', 
         'Fuertes', 
-        'Cristina',
+        'Gabo',
         'alisak@gmail.com',
-        'true',
-        'true'
+        'false',
+        'false'
 );
 
 -- Insertar nueva fila en la tabla libros
@@ -166,4 +169,11 @@ INSERT INTO tesis (
     '2018',
     'public/libros/tesis147.pdf',
     'public/portadas/caratula147.jpg'
+);
+
+--insertar nueva etiqueta
+INSERT INTO etiquetas (
+    etiqueta
+) values(
+    'calculo'
 );
